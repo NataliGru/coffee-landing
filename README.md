@@ -17,7 +17,9 @@ The project is a work in progress and will be expanded with additional sections 
 - Coffee introduction section with product imagery and a decorative coffee splash
 - Clear call-to-action buttons for ordering and learning more
 - Responsive navigation
-- Hover effects and subtle transitions
+- Scroll-triggered reveal animations powered by the Intersection Observer API
+- Reduced-motion support for improved accessibility
+- Hover effects and smooth transitions
 - Reusable CSS variables for colors and typography
 - Custom Google Fonts
 

@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-block {
@@ -34,7 +37,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 50svh;
+    min-height: 80svh;
     padding-block: 50px;
     background-position: 60% center;
   }

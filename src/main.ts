@@ -1,13 +1,5 @@
-import { setupCounter } from "./counter.ts";
+import "./styles/main.css";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-<section id="center">
-<h1>
-TEST
-</h1>
-<p>
-test</p>
-<section id="spacer"></section>
-`;
+import { initRevealAnimations } from "./scripts/reveal";
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+initRevealAnimations();

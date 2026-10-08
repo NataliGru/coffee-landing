@@ -3,6 +3,7 @@
 @import "./header.css";
 @import "./hero.css";
 @import "./coffee-intro.css";
+@import './animations.css';
 
 body {
   font-family: var(--font-primary);
