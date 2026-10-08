@@ -1,0 +1,56 @@
+@import "./reset.css";
+@import "./variables.css";
+@import "./header.css";
+@import "./hero.css";
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background: var(--color-background);
+  width: 100%;
+}
+
+header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding-block: 5px;
+}
+
+.rounded-primary-button {
+  border-radius: 24px;
+  padding-inline: 20px;
+  padding-block: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  transition: all 300ms ease-in-out;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.rounded-primary-button:hover {
+  transform: scale(1.2);
+}
+
+.container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .rounded-primary-button {
+    padding-inline: 12px;
+    padding-block: 8px;
+    font-size: 14px;
+  }
+}

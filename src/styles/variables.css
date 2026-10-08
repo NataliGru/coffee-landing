@@ -1,0 +1,19 @@
+:root {
+  /* Brand */
+  --color-primary: #f9c06a;
+  --color-coffee: #603809;
+
+  /* Text */
+  --color-text: #707070;
+  --color-text-dark: #1e1e1e;
+  --color-white: #ffffff;
+
+  /* Background */
+  --color-background: #ffffff;
+  --color-background-light: #fff9f1;
+  --color-background-accent: #ffeed8;
+
+  /* Typography */
+  --font-primary: 'Playfair Display', serif;
+  --font-script: 'Clicker Script', cursive;
+}
