@@ -2,6 +2,7 @@
 @import "./variables.css";
 @import "./header.css";
 @import "./hero.css";
+@import "./coffee-intro.css";
 
 body {
   font-family: var(--font-primary);
@@ -53,4 +54,8 @@ nav {
     padding-block: 8px;
     font-size: 14px;
   }
+}
+
+.coffee-splash  {
+  position: absolute;
 }
