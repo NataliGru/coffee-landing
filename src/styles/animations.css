@@ -1,6 +1,6 @@
 .reveal {
   opacity: 0;
-  transform: translateY(30px) scale(0.95);
+  transform: translateY(10px) scale(0.97);
 
   transition:
     opacity 700ms ease,

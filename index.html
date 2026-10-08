@@ -4,8 +4,42 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Coffee | Fresh Coffee & Coffee Shop</title>
+
+    <meta
+      name="description"
+      content="Discover freshly brewed coffee at Bean Scene. Explore our coffee selection and find your perfect cup."
+    />
+
+    <link
+      rel="canonical"
+      href="https://coffee-landing-natali-gru.vercel.app/"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Coffee | Fresh Coffee & Coffee Shop" />
+
+    <meta
+      property="og:description"
+      content="Discover quality coffee and explore the Bean Scene coffee selection."
+    />
+
+    <meta
+      property="og:url"
+      content="https://coffee-landing-natali-gru.vercel.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://coffee-landing-natali-gru.vercel.app/hero-bg.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preload" as="image" href="/hero-bg.png" fetchpriority="high" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
@@ -13,12 +47,11 @@
     />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
-
-    <title>Coffee landing</title>
   </head>
+
   <body>
     <header>
-      <nav class="container reveal">
+      <nav class="container reveal" aria-label="Main navigation">
         <a class="nav-logo nav-item" href="#"> Beans </a>
 
         <ul class="nav-list">
@@ -58,7 +91,7 @@
         </div>
       </section>
 
-      <section class="coffee-intro">
+      <section class="coffee-intro" id="about">
         <div class="container">
           <div class="coffee-intro-block">
             <div class="coffee-intro-content">
@@ -81,17 +114,21 @@
               src="./src/assets/images/coffee-cup.png"
               alt="coffee cup"
               class="coffee-cup reveal"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <img
             src="./src/assets/images/coffee_splash.png"
             alt=""
             class="coffee-splash"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
 
-      <section class="menu">
+      <section class="menu" id="menu">
         <div class="container menu">
           <h2 class="menu-title reveal">Enjoy a new blend of coffee style</h2>
           <p class="reveal">
@@ -105,6 +142,8 @@
                 src="./src/assets/menu/cappuccino.png"
                 alt="Cappuccino"
                 class="menu-card-image"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="menu-card-content">
@@ -125,6 +164,8 @@
                 src="./src/assets/menu/chai-latte.png"
                 alt="Chai Latte"
                 class="menu-card-image"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="menu-card-content">
@@ -145,6 +186,8 @@
                 src="./src/assets/menu/macchiato.png"
                 alt="Macchiato"
                 class="menu-card-image"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="menu-card-content">
@@ -165,6 +208,8 @@
                 src="./src/assets/menu/expresso.png"
                 alt="Expresso"
                 class="menu-card-image"
+                loading="lazy"
+                decoding="async"
               />
 
               <div class="menu-card-content">
@@ -183,6 +228,8 @@
         </div>
       </section>
     </main>
+
+    <footer id="contact">...</footer>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
