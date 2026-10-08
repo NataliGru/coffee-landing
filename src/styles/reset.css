@@ -11,7 +11,13 @@ html {
   align-items: center;
 }
 
-body,  nav, h1, ul {
+body,
+nav,
+h1,
+ul,
+h2,
+h3,
+p {
   margin: 0;
 }
 
@@ -37,6 +43,6 @@ a {
   cursor: pointer;
 }
 
-ul  {
-  list-style-type: none
+ul {
+  list-style-type: none;
 }

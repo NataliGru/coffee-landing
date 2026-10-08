@@ -3,13 +3,21 @@
 @import "./header.css";
 @import "./hero.css";
 @import "./coffee-intro.css";
-@import './animations.css';
+@import "./animations.css";
+@import "./menu.css";
 
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
   background: var(--color-background);
   width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-bottom: 50px;
 }
 
 header {
@@ -57,6 +65,6 @@ nav {
   }
 }
 
-.coffee-splash  {
+.coffee-splash {
   position: absolute;
 }

@@ -6,7 +6,7 @@ A responsive coffee shop landing page created as a personal practice project.
 
 ## About the project
 
-This project is a simple landing page for a fictional coffee shop called **Beans**. It currently includes a responsive navigation bar, a hero section with a call-to-action, and an introductory section that tells visitors more about the coffee shop and its products.
+This project is a landing page for a fictional coffee shop called **Beans**. It currently includes a responsive navigation bar, a hero section, an introduction to the coffee shop, and a product menu where visitors can explore different coffee drinks.
 
 The project is a work in progress and will be expanded with additional sections and interactions.
 
@@ -15,6 +15,8 @@ The project is a work in progress and will be expanded with additional sections 
 - Responsive layout for desktop and mobile devices
 - Hero section with a full-width background image
 - Coffee introduction section with product imagery and a decorative coffee splash
+- Responsive coffee menu with product cards, ingredients, prices, and order buttons
+- CSS Grid layout that automatically adapts the menu to different screen sizes
 - Clear call-to-action buttons for ordering and learning more
 - Responsive navigation
 - Scroll-triggered reveal animations powered by the Intersection Observer API
