@@ -50,21 +50,21 @@
   </head>
 
   <body>
-    <header>
-      <nav class="container reveal" aria-label="Main navigation">
-        <a class="nav-logo nav-item" href="#"> Beans </a>
+    <header class="header">
+      <nav class="nav container reveal" aria-label="Main navigation">
+        <a class="nav__logo" href="#"> Beans </a>
 
-        <ul class="nav-list">
-          <li class="nav-list-item nav-item">
-            <a href="#menu"> Menu </a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#menu"> Menu </a>
           </li>
 
-          <li class="nav-list-item nav-item">
-            <a href="#about"> About Us </a>
+          <li class="nav__item">
+            <a class="nav__link" href="#about"> About Us </a>
           </li>
 
-          <li class="nav-list-item nav-item">
-            <a href="#contact"> Contact Us </a>
+          <li class="nav__item">
+            <a class="nav__link" href="#contact"> Contact Us </a>
           </li>
         </ul>
       </nav>
@@ -72,34 +72,32 @@
 
     <main>
       <section class="hero">
-        <div class="container hero-container">
-          <div class="hero-block">
-            <p class="hero-before-title reveal">
+        <div class="hero__container container">
+          <div class="hero__content">
+            <p class="hero__subtitle reveal">
               We've got your morning covered with
             </p>
 
-            <h1 class="hero-title reveal">Coffee</h1>
+            <h1 class="hero__title reveal">Coffee</h1>
 
-            <p class="hero-after-title reveal">
+            <p class="hero__description reveal">
               It is best to start your day with a cup of coffee. Discover the
               best flavours coffee you will ever have. We provide the best for
               our customers.
             </p>
 
-            <button class="rounded-primary-button reveal">Order Now</button>
+            <button class="button button--primary reveal">Order Now</button>
           </div>
         </div>
       </section>
 
       <section class="coffee-intro" id="about">
         <div class="container">
-          <div class="coffee-intro-block">
-            <div class="coffee-intro-content">
-              <h2 class="coffee-intro-title reveal">
-                Discover the best coffee
-              </h2>
+          <div class="coffee-intro__inner">
+            <div class="coffee-intro__content">
+              <h2 class="section-title reveal">Discover the best coffee</h2>
 
-              <p class="reveal">
+              <p class="section-description reveal">
                 Bean Scene is a coffee shop that provides you with quality
                 coffee that helps boost your productivity and helps build your
                 mood. Having a cup of coffee is good, but having a cup of real
@@ -107,21 +105,26 @@
                 coffee more than others you have ever tasted.
               </p>
 
-              <button class="rounded-primary-button reveal">Learn More</button>
+              <button
+                class="coffee-intro__button button button--primary reveal"
+              >
+                Learn More
+              </button>
             </div>
 
             <img
               src="./src/assets/images/coffee-cup.png"
               alt="coffee cup"
-              class="coffee-cup reveal"
+              class="coffee-intro__image reveal"
               loading="lazy"
               decoding="async"
             />
           </div>
+
           <img
             src="./src/assets/images/coffee_splash.png"
             alt=""
-            class="coffee-splash"
+            class="coffee-intro__splash"
             loading="lazy"
             decoding="async"
           />
@@ -129,31 +132,35 @@
       </section>
 
       <section class="menu" id="menu">
-        <div class="container menu">
-          <h2 class="menu-title reveal">Enjoy a new blend of coffee style</h2>
-          <p class="reveal">
+        <div class="menu__container container">
+          <h2 class="section-title reveal">
+            Enjoy a new blend of coffee style
+          </h2>
+          <p class="section-description reveal">
             Explore all flavours of coffee with us. There is always a new cup
             worth experiencing
           </p>
 
-          <div class="menu-grid">
+          <div class="card-grid">
             <div class="menu-card reveal">
               <img
                 src="./src/assets/menu/cappuccino.png"
                 alt="Cappuccino"
-                class="menu-card-image"
+                class="menu-card__image"
                 loading="lazy"
                 decoding="async"
               />
 
-              <div class="menu-card-content">
-                <h3 class="menu-card-title">Cappuccino</h3>
+              <div class="menu-card__content">
+                <h3 class="menu-card__title">Cappuccino</h3>
 
-                <p>Coffee 50% | Milk 50%</p>
+                <p class="menu-card__description">
+                  Espresso 33% | Milk 33% | Foam 33%
+                </p>
 
-                <p class="menu-card-price">$8.50</p>
+                <p class="menu-card__price">$8.50</p>
 
-                <button class="rounded-primary-button menu-card-button">
+                <button class="menu-card__button button button--primary">
                   Order Now
                 </button>
               </div>
@@ -163,19 +170,19 @@
               <img
                 src="./src/assets/menu/chai-latte.png"
                 alt="Chai Latte"
-                class="menu-card-image"
+                class="menu-card__image"
                 loading="lazy"
                 decoding="async"
               />
 
-              <div class="menu-card-content">
-                <h3 class="menu-card-title">Chai Latte</h3>
+              <div class="menu-card__content">
+                <h3 class="menu-card__title">Chai Latte</h3>
 
-                <p>Coffee 50% | Milk 50%</p>
+                <p class="menu-card__description">Spiced Tea 50% | Milk 50%</p>
 
-                <p class="menu-card-price">$8.50</p>
+                <p class="menu-card__price">$8.50</p>
 
-                <button class="rounded-primary-button menu-card-button">
+                <button class="menu-card__button button button--primary">
                   Order Now
                 </button>
               </div>
@@ -185,19 +192,21 @@
               <img
                 src="./src/assets/menu/macchiato.png"
                 alt="Macchiato"
-                class="menu-card-image"
+                class="menu-card__image"
                 loading="lazy"
                 decoding="async"
               />
 
-              <div class="menu-card-content">
-                <h3 class="menu-card-title">Macchiato</h3>
+              <div class="menu-card__content">
+                <h3 class="menu-card__title">Macchiato</h3>
 
-                <p>Coffee 50% | Milk 50%</p>
+                <p class="menu-card__description">
+                  Espresso 90% | Milk Foam 10%
+                </p>
 
-                <p class="menu-card-price">$8.50</p>
+                <p class="menu-card__price">$8.50</p>
 
-                <button class="rounded-primary-button menu-card-button">
+                <button class="menu-card__button button button--primary">
                   Order Now
                 </button>
               </div>
@@ -206,26 +215,213 @@
             <div class="menu-card reveal">
               <img
                 src="./src/assets/menu/expresso.png"
-                alt="Expresso"
-                class="menu-card-image"
+                alt="Espresso"
+                class="menu-card__image"
                 loading="lazy"
                 decoding="async"
               />
 
-              <div class="menu-card-content">
-                <h3 class="menu-card-title">Expresso</h3>
+              <div class="menu-card__content">
+                <h3 class="menu-card__title">Espresso</h3>
 
-                <p>Coffee 50% | Milk 50%</p>
+                <p class="menu-card__description">Espresso 100%</p>
 
-                <p class="menu-card-price">$8.50</p>
+                <p class="menu-card__price">$8.50</p>
 
-                <button class="rounded-primary-button menu-card-button">
+                <button class="menu-card__button button button--primary">
                   Order Now
                 </button>
               </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="about" id="about">
+        <img
+          src="./src/assets/images/coffee_splash.png"
+          alt=""
+          class="about__splash"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="container about__container">
+          <h2 class="section-title reveal">Why are we different?</h2>
+
+          <p class="section-description reveal">
+            We don't just make your coffee, we make your day!
+          </p>
+
+          <div class="card-grid">
+            <div class="about-card reveal">
+              <img
+                src="./src/assets/about/coffee-beans.png"
+                alt=""
+                width="88px"
+                height="88px"
+              />
+
+              <h2 class="about-card__title">Supreme Beans</h2>
+
+              <p class="about-card__description">
+                Beans that provides great taste
+              </p>
+            </div>
+
+            <div class="about-card reveal">
+              <img
+                src="./src/assets/about/quality.png"
+                alt=""
+                width="88px"
+                height="88px"
+              />
+
+              <h2 class="about-card__title">High Quality</h2>
+
+              <p class="about-card__description">
+                We provide the highest quality
+              </p>
+            </div>
+
+            <div class="about-card reveal">
+              <img
+                src="./src/assets/about/extraordinary.png"
+                alt=""
+                width="88px"
+                height="88px"
+              />
+
+              <h2 class="about-card__title">Extraordinary</h2>
+
+              <p class="about-card__description">
+                Coffee like you have never tasted
+              </p>
+            </div>
+
+            <div class="about-card reveal">
+              <img
+                src="./src/assets/about/price.png"
+                alt=""
+                width="88px"
+                height="88px"
+              />
+
+              <h2 class="about-card__title">Affordable Price</h2>
+
+              <p class="about-card__description">
+                Our Coffee prices are easy to afford
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="join-us container reveal">
+        <p class="section-description">
+          Great ideas start with great coffee, Lets help you achieve that
+        </p>
+
+        <h2 class="join-us__title">Get started today.</h2>
+
+        <button class="button button--primary">Join Us</button>
+      </div>
+
+      <section class="coffee-promo reveal">
+        <div class="container coffee-promo__block">
+          <div class="coffee-promo__content">
+            <h2 class="coffee-promo__title">
+              Get a chance to have an Amazing morning
+            </h2>
+
+            <p class="coffee-promo__description">
+              We are giving you are one time opportunity to experience a better
+              life with coffee.
+            </p>
+
+            <button class="button button--primary coffee-promo__button">
+              Order Now
+            </button>
+          </div>
+
+          <div class="coffee-promo__image-container">
+            <img
+              src="./src/assets/coffee-promo/cup.png"
+              alt="coffee cup"
+              class="coffee-promo__image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="feedback">
+        <img
+          src="./src/assets/images/coffee_splash.png"
+          alt=""
+          class="feedback__splash feedback__splash--top"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="container feedback__block">
+          <h2 class="section-title">Our coffee perfection feedback</h2>
+
+          <p class="section-description">
+            Our customers has amazing things to say about us
+          </p>
+
+          <div class="feedback__slider">
+            <button
+              class="feedback__slider__button feedback__slider__button--left"
+            >
+              ←
+            </button>
+
+            <div class="feedback__card is-active">
+              <span class="feedback__card__icon">“</span>
+              <p class="feedback__card__content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset.....
+              </p>
+
+              <h3 class="feedback__card__name">Jonny Thomas</h3>
+
+              <p class="feedback__card__position">Project Manager</p>
+            </div>
+
+            <div class="feedback__card" hidden>
+              <span class="feedback__card__icon">“</span>
+              <p class="feedback__card__content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book......
+              </p>
+
+              <h3 class="feedback__card__name">Thomas Thomas</h3>
+
+              <p class="feedback__card__position">Manager</p>
+            </div>
+
+            <button
+              class="feedback__slider__button feedback__slider__button--right"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <img
+          src="./src/assets/images/coffee_splash.png"
+          alt=""
+          class="feedback__splash feedback__splash--bottom"
+          loading="lazy"
+          decoding="async"
+        />
       </section>
     </main>
 

@@ -1,0 +1,14 @@
+.join-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.join-us__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-coffee);
+}

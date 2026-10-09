@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.hero-block {
+.hero__content {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -19,18 +19,18 @@
   color: var(--color-white);
 }
 
-.hero-title {
+.hero__title {
   font-family: var(--font-script);
   color: var(--color-white);
   font-size: 220px;
   font-weight: 500;
 }
 
-.hero-before-title {
+.hero__subtitle {
   font-size: 22px;
   font-weight: 600;
 }
-.hero-after-title {
+.hero__description {
   font-size: 20px;
 }
 
@@ -41,19 +41,19 @@
     background-position: 60% center;
   }
 
-  .hero-block {
+  .hero__content {
     gap: 16px;
   }
 
-  .hero-title {
+  .hero__title {
     font-size: 130px;
   }
 
-  .hero-before-title {
+  .hero__subtitle {
     font-size: 16px;
   }
 
-  .hero-after-title {
+  .hero__description {
     font-size: 14px;
   }
 }
