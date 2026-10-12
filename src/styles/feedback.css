@@ -41,7 +41,7 @@
   background-color: var(--color-primary);
   border-radius: 16px;
   z-index: 1;
-  transition: all 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 
 .feedback__slider__button--right {

@@ -1,4 +1,8 @@
 export const initFeedbackSlider = () => {
+  const reducedMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
   const feedbackSlides =
     document.querySelectorAll<HTMLElement>(".feedback__card");
 
@@ -10,6 +14,8 @@ export const initFeedbackSlider = () => {
     ".feedback__slider__button--right",
   );
 
+  const status = document.querySelector<HTMLElement>("#feedback-status");
+
   let currentIndex = 0;
 
   const showSlide = (index: number) => {
@@ -19,7 +25,7 @@ export const initFeedbackSlider = () => {
       slide.classList.toggle("is-active", isActive);
       slide.setAttribute("aria-hidden", String(!isActive));
 
-      if (isActive) {
+      if (isActive && !reducedMotionQuery) {
         slide.animate(
           [
             { opacity: 0, transform: "translateX(12px)" },
@@ -32,6 +38,17 @@ export const initFeedbackSlider = () => {
         );
       }
     });
+
+    if (status) {
+      const activeSlide = feedbackSlides[index];
+      const customerName = activeSlide
+        .querySelector<HTMLElement>(".feedback__card__name")
+        ?.textContent?.trim();
+
+      status.textContent = `Feedback ${index + 1} of ${
+        feedbackSlides.length
+      }${customerName ? `, by ${customerName}` : ""}`;
+    }
   };
 
   prevButton?.addEventListener("click", () => {

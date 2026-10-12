@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Coffee | Fresh Coffee & Coffee Shop</title>
+    <title>Bean Scene | Fresh Coffee & Coffee Shop</title>
 
     <meta
       name="description"
@@ -17,8 +17,14 @@
       href="https://coffee-landing-natali-gru.vercel.app/"
     />
 
+    <meta name="theme-color" content="#603809" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Coffee | Fresh Coffee & Coffee Shop" />
+    <meta property="og:site_name" content="Bean Scene" />
+    <meta
+      property="og:title"
+      content="Bean Scene | Fresh Coffee & Coffee Shop"
+    />
 
     <meta
       property="og:description"
@@ -31,15 +37,35 @@
     />
     <meta
       property="og:image"
-      content="https://coffee-landing-natali-gru.vercel.app/hero-bg.png"
+      content="https://coffee-landing-natali-gru.vercel.app/hero-bg.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="A cup of freshly brewed coffee at Bean Scene"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Bean Scene | Fresh Coffee & Coffee Shop"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover quality coffee and explore the Bean Scene coffee selection."
+    />
+    <meta
+      name="twitter:image"
+      content="https://coffee-landing-natali-gru.vercel.app/hero-bg.webp"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="A cup of freshly brewed coffee at Bean Scene"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preload" as="image" href="/hero-bg.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/hero-bg.webp" fetchpriority="high" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
@@ -52,7 +78,7 @@
   <body>
     <header class="header">
       <nav class="nav container reveal" aria-label="Main navigation">
-        <a class="nav__logo" href="#"> Beans </a>
+        <a class="nav__logo" href="/"> Beans </a>
 
         <ul class="nav__list">
           <li class="nav__item">
@@ -91,7 +117,7 @@
         </div>
       </section>
 
-      <section class="coffee-intro" id="about">
+      <section class="coffee-intro">
         <div class="container">
           <div class="coffee-intro__inner">
             <div class="coffee-intro__content">
@@ -113,11 +139,13 @@
             </div>
 
             <img
-              src="./src/assets/images/coffee-cup.png"
+              src="./src/assets/images/coffee-cup.webp"
               alt="coffee cup"
               class="coffee-intro__image reveal"
               loading="lazy"
               decoding="async"
+              width="500"
+              height="465"
             />
           </div>
 
@@ -127,6 +155,8 @@
             class="coffee-intro__splash"
             loading="lazy"
             decoding="async"
+            width="498"
+            height="272"
           />
         </div>
       </section>
@@ -144,11 +174,13 @@
           <div class="card-grid">
             <div class="menu-card reveal">
               <img
-                src="./src/assets/menu/cappuccino.png"
+                src="./src/assets/menu/cappuccino.webp"
                 alt="Cappuccino"
                 class="menu-card__image"
                 loading="lazy"
                 decoding="async"
+                width="280"
+                height="222"
               />
 
               <div class="menu-card__content">
@@ -168,11 +200,13 @@
 
             <div class="menu-card reveal">
               <img
-                src="./src/assets/menu/chai-latte.png"
+                src="./src/assets/menu/chai-latte.webp"
                 alt="Chai Latte"
                 class="menu-card__image"
                 loading="lazy"
                 decoding="async"
+                width="280"
+                height="222"
               />
 
               <div class="menu-card__content">
@@ -190,11 +224,13 @@
 
             <div class="menu-card reveal">
               <img
-                src="./src/assets/menu/macchiato.png"
+                src="./src/assets/menu/macchiato.webp"
                 alt="Macchiato"
                 class="menu-card__image"
                 loading="lazy"
                 decoding="async"
+                width="280"
+                height="222"
               />
 
               <div class="menu-card__content">
@@ -214,11 +250,13 @@
 
             <div class="menu-card reveal">
               <img
-                src="./src/assets/menu/expresso.png"
+                src="./src/assets/menu/expresso.webp"
                 alt="Espresso"
                 class="menu-card__image"
                 loading="lazy"
                 decoding="async"
+                width="280"
+                height="222"
               />
 
               <div class="menu-card__content">
@@ -244,6 +282,8 @@
           class="about__splash"
           loading="lazy"
           decoding="async"
+          width="498"
+          height="272"
         />
         <div class="container about__container">
           <h2 class="section-title reveal">Why are we different?</h2>
@@ -257,11 +297,13 @@
               <img
                 src="./src/assets/about/coffee-beans.png"
                 alt=""
-                width="88px"
-                height="88px"
+                width="88"
+                height="88"
+                loading="lazy"
+                decoding="async"
               />
 
-              <h2 class="about-card__title">Supreme Beans</h2>
+              <h3 class="about-card__title">Supreme Beans</h3>
 
               <p class="about-card__description">
                 Beans that provides great taste
@@ -272,11 +314,13 @@
               <img
                 src="./src/assets/about/quality.png"
                 alt=""
-                width="88px"
-                height="88px"
+                width="88"
+                height="88"
+                loading="lazy"
+                decoding="async"
               />
 
-              <h2 class="about-card__title">High Quality</h2>
+              <h3 class="about-card__title">High Quality</h3>
 
               <p class="about-card__description">
                 We provide the highest quality
@@ -287,11 +331,13 @@
               <img
                 src="./src/assets/about/extraordinary.png"
                 alt=""
-                width="88px"
-                height="88px"
+                width="88"
+                height="88"
+                loading="lazy"
+                decoding="async"
               />
 
-              <h2 class="about-card__title">Extraordinary</h2>
+              <h3 class="about-card__title">Extraordinary</h3>
 
               <p class="about-card__description">
                 Coffee like you have never tasted
@@ -302,11 +348,13 @@
               <img
                 src="./src/assets/about/price.png"
                 alt=""
-                width="88px"
-                height="88px"
+                width="88"
+                height="88"
+                loading="lazy"
+                decoding="async"
               />
 
-              <h2 class="about-card__title">Affordable Price</h2>
+              <h3 class="about-card__title">Affordable Price</h3>
 
               <p class="about-card__description">
                 Our Coffee prices are easy to afford
@@ -345,9 +393,13 @@
 
           <div class="coffee-promo__image-container">
             <img
-              src="./src/assets/coffee-promo/cup.png"
+              src="./src/assets/coffee-promo/cup.webp"
               alt="coffee cup"
               class="coffee-promo__image"
+              width="657"
+              height="574"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -360,24 +412,40 @@
           class="feedback__splash feedback__splash--top"
           loading="lazy"
           decoding="async"
+          width="498"
+          height="272"
         />
 
         <div class="container feedback__block">
-          <h2 class="section-title">Our coffee perfection feedback</h2>
+          <h2 class="section-title" id="feedback-title">
+            Our coffee perfection feedback
+          </h2>
 
           <p class="section-description">
             Our customers has amazing things to say about us
           </p>
 
-          <div class="feedback__slider">
+          <div
+            class="feedback__slider"
+            role="region"
+            aria-roledescription="carousel"
+            aria-labelledby="feedback-title"
+          >
             <button
               class="feedback__slider__button feedback__slider__button--left"
+              aria-label="Previous feedback"
             >
-              ←
+              <span aria-hidden="true">←</span>
             </button>
 
             <div class="feedback__cards">
-              <div class="feedback__card is-active" aria-hidden="false">
+              <div
+                class="feedback__card is-active"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="feedback 1 of 3"
+                aria-hidden="false"
+              >
                 <span class="feedback__card__icon">“</span>
                 <p class="feedback__card__content">
                   The coffee is consistently rich and aromatic, and the team
@@ -390,7 +458,13 @@
                 <p class="feedback__card__position">Product Designer</p>
               </div>
 
-              <div class="feedback__card" aria-hidden="true">
+              <div
+                class="feedback__card"
+                aria-hidden="true"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="feedback 2 of 3"
+              >
                 <span class="feedback__card__icon">“</span>
                 <p class="feedback__card__content">
                   I stopped by for a quick espresso and stayed for the warm
@@ -404,7 +478,13 @@
                 <p class="feedback__card__position">Marketing Manager</p>
               </div>
 
-              <div class="feedback__card" aria-hidden="true">
+              <div
+                class="feedback__card"
+                aria-hidden="true"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="feedback 3 of 3"
+              >
                 <span class="feedback__card__icon">“</span>
                 <p class="feedback__card__content">
                   From the smooth latte to the friendly recommendations, every
@@ -418,10 +498,18 @@
               </div>
             </div>
 
+            <p
+              class="visually-hidden"
+              id="feedback"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
+
             <button
               class="feedback__slider__button feedback__slider__button--right"
+              aria-label="Next feedback"
             >
-              →
+              <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
@@ -432,11 +520,86 @@
           class="feedback__splash feedback__splash--bottom"
           loading="lazy"
           decoding="async"
+          width="498"
+          height="272"
         />
       </section>
     </main>
 
-    <footer id="contact">...</footer>
+    <footer id="contact" class="footer">
+      <div class="container footer__container">
+        <div class="footer__about">
+          <a class="footer__title" href="/" aria-label="Beans home">Beans</a>
+
+          <p class="footer__text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+
+          <ul class="footer__socials">
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" aria-label="Facebook">
+                <img
+                  class="footer__social-icon"
+                  src="./src/assets/footer/socials/f.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </li>
+
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" aria-label="Instagram">
+                <img
+                  class="footer__social-icon"
+                  src="./src/assets/footer/socials/i.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </li>
+
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" aria-label="Youtube">
+                <img
+                  class="footer__social-icon"
+                  src="./src/assets/footer/socials/y.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </li>
+
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" aria-label="Twitter">
+                <img
+                  class="footer__social-icon"
+                  src="./src/assets/footer/socials/t.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <div class=""></div>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,8 +1,9 @@
-# Coffee Landing Page
+# Bean Scene Coffee Landing Page
 
-A responsive coffee shop landing page created as a personal practice project.
+A responsive and accessible landing page for a fictional coffee shop, created
+as a front-end portfolio project.
 
-![Coffee Landing Page preview](./src/assets/images/hero-bg.png)
+![Coffee Landing Page preview](./public/hero-bg.webp)
 
 ## Live demo
 
@@ -10,7 +11,10 @@ A responsive coffee shop landing page created as a personal practice project.
 
 ## About the project
 
-This project is a landing page for a fictional coffee shop called **Beans**. It includes a responsive navigation bar, a hero section, an introduction to the coffee shop, a product menu, a benefits section, promotional calls to action, and an interactive customer feedback slider.
+This project is a landing page for a fictional coffee shop called **Bean Scene**.
+It includes a responsive navigation bar, a hero section, an introduction to the
+coffee shop, a product menu, a benefits section, promotional calls to action,
+and an interactive customer feedback carousel.
 
 The project is a work in progress and is being developed as a front-end practice and portfolio project.
 
@@ -22,15 +26,17 @@ The project is a work in progress and is being developed as a front-end practice
 - Responsive coffee menu with product cards, ingredients, prices, and order buttons
 - Benefits section with responsive feature cards
 - Promotional coffee section with a background overlay and product imagery
-- Interactive customer feedback slider with animated slide transitions
+- Accessible customer feedback carousel with labelled controls and slide status announcements
 - CSS Grid layouts that adapt cards to different screen sizes
 - Clear call-to-action buttons for ordering and learning more
 - Responsive navigation
 - Scroll-triggered reveal animations powered by the Intersection Observer API
-- Reduced-motion support for improved accessibility
+- Reduced-motion support for CSS and JavaScript animations
+- Visible keyboard focus styles for links and buttons
 - Hover effects and smooth transitions
-- SEO and social sharing metadata with Open Graph support
-- Optimized image loading with preloading, lazy loading, and asynchronous decoding
+- SEO and social sharing metadata for Open Graph and Twitter/X cards
+- Optimized WebP images with explicit dimensions to reduce layout shifts
+- Image preloading, lazy loading, and asynchronous decoding
 - Smooth anchor navigation between page sections
 - Reusable components and BEM-style CSS class naming
 - Reusable CSS variables for colors and typography

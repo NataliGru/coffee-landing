@@ -9,6 +9,7 @@
 @import "./join-us.css";
 @import "./coffee-promo.css";
 @import "./feedback.css";
+@import "./footer.css";
 
 body {
   font-family: var(--font-primary);
@@ -52,7 +53,7 @@ main {
   padding-block: 12px;
   background-color: var(--color-primary);
   color: var(--color-text-dark);
-  transition: all 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 
 .button--primary:hover {
@@ -82,6 +83,24 @@ main {
 .section-description {
   font-size: 20px;
   line-height: 34px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #603809;
 }
 
 @media (max-width: 768px) {

@@ -2,7 +2,7 @@
   min-height: 570px;
   background-image:
     linear-gradient(rgb(96 56 9 / 60%), rgb(96 56 9 / 60%)),
-    url("./../assets/coffee-promo/coffee-promo-bg.png");
+    url("./../assets/coffee-promo/coffee-promo-bg.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
