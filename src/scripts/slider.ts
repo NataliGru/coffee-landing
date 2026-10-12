@@ -16,8 +16,8 @@ export const initFeedbackSlider = () => {
     feedbackSlides.forEach((slide, i) => {
       const isActive = i === index;
 
-      slide.hidden = !isActive;
       slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
 
       if (isActive) {
         slide.animate(
