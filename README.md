@@ -24,7 +24,8 @@ The project is a work in progress and is being developed as a front-end practice
 - Hero section with a full-width background image
 - Coffee introduction section with product imagery and a decorative coffee splash
 - Responsive coffee menu with product cards, ingredients, starting prices, and order buttons
-- Accessible order dialog with drink size and quantity controls and a calculated total
+- Accessible order dialog with custom drink-size options and synchronized quantity controls
+- Dynamic unit-price and order-total calculation based on the selected size and quantity
 - Benefits section with responsive feature cards
 - Promotional coffee section with a background overlay and product imagery
 - Accessible customer feedback carousel with labelled controls and slide status announcements

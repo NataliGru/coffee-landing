@@ -15,6 +15,24 @@ export const initOrderModal = () => {
   const orderModalPrice =
     document.querySelector<HTMLElement>("#order-modal-price");
 
+  const sizeInputs = document.querySelectorAll<HTMLInputElement>(
+    "input[name=coffee-size]",
+  );
+
+  const defaultSize = document.querySelector<HTMLInputElement>(
+    'input[name="coffee-size"][value="small"]',
+  );
+
+  const getPriceModifier = () => {
+    const selectedPrice = document.querySelector<HTMLInputElement>(
+      "input[name=coffee-size]:checked",
+    );
+
+    const modifier = Number(selectedPrice?.dataset.priceModifier);
+
+    return Number.isFinite(modifier) ? modifier : 0;
+  };
+
   const decreaseButton = document.querySelector<HTMLButtonElement>(
     "[data-quantity-decrease]",
   );
@@ -23,29 +41,58 @@ export const initOrderModal = () => {
     "[data-quantity-increase]",
   );
 
-  const quantityOutput = document.querySelector<HTMLElement>(
-    "[data-quantity-output]",
-  );
+  const quantityInput =
+    document.querySelector<HTMLInputElement>("#order-quantity");
 
   const totalOutput = document.querySelector<HTMLElement>("#order-modal-total");
 
-  let quantity = 0;
+  const MIN_QUANTITY = 1;
+  const MAX_QUANTITY = 10;
+
   let currentPrice = 0;
 
-  const updateOrderSummary = () => {
-    if (quantityOutput) {
-      quantityOutput.textContent = String(quantity);
+  const normalizeQuantity = (value: number) => {
+    if (!Number.isFinite(value)) return MIN_QUANTITY;
+
+    return Math.min(MAX_QUANTITY, Math.max(MIN_QUANTITY, value));
+  };
+
+  const updateOrderSummary = (quantity: number) => {
+    const normalizedQuantity = normalizeQuantity(quantity);
+    const sizeModifier = getPriceModifier();
+
+    const unitPrice = currentPrice + sizeModifier;
+
+    const total = unitPrice * normalizedQuantity;
+
+    if (quantityInput) {
+      quantityInput.value = String(normalizedQuantity);
     }
 
     if (totalOutput) {
-      const total = currentPrice * quantity;
       totalOutput.textContent = `$${total.toFixed(2)}`;
     }
 
+    if (orderModalPrice) {
+      orderModalPrice.textContent = `$${unitPrice.toFixed(2)}`;
+    }
+
     if (decreaseButton) {
-      decreaseButton.disabled = quantity === 1;
+      decreaseButton.disabled = normalizedQuantity === MIN_QUANTITY;
+    }
+
+    if (increaseButton) {
+      increaseButton.disabled = normalizedQuantity >= MAX_QUANTITY;
     }
   };
+
+  sizeInputs.forEach((sizeInput) => {
+    sizeInput.addEventListener("change", () => {
+      const quantity = Number(quantityInput?.value);
+
+      updateOrderSummary(quantity);
+    });
+  });
 
   orderButtons.forEach((orderButton) =>
     orderButton.addEventListener("click", () => {
@@ -57,7 +104,6 @@ export const initOrderModal = () => {
       }
 
       currentPrice = price;
-      quantity = 1;
 
       if (!orderModal || !product || !price) return;
 
@@ -65,27 +111,37 @@ export const initOrderModal = () => {
         orderModalTitle.textContent = `Order ${product}`;
       }
 
-      if (orderModalPrice) {
-        orderModalPrice.textContent = `$${price}`;
+      if (defaultSize) {
+        defaultSize.checked = true;
       }
 
-      updateOrderSummary();
+      updateOrderSummary(MIN_QUANTITY);
       orderModal?.showModal();
     }),
   );
 
   decreaseButton?.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity -= 1;
+    const quantity = Number(quantityInput?.value);
 
-      updateOrderSummary();
-    }
+    updateOrderSummary(quantity - 1);
   });
 
   increaseButton?.addEventListener("click", () => {
-    quantity += 1;
+    const quantity = Number(quantityInput?.value);
 
-    updateOrderSummary();
+    updateOrderSummary(quantity + 1);
+  });
+
+  quantityInput?.addEventListener("input", () => {
+    const quantity = Number(quantityInput.value);
+
+    if (Number.isFinite(quantity)) {
+      updateOrderSummary(quantity);
+    }
+  });
+
+  quantityInput?.addEventListener("change", () => {
+    updateOrderSummary(Number(quantityInput.value));
   });
 
   closeOrderModalButton?.addEventListener("click", () => {

@@ -684,43 +684,52 @@
         </p>
 
         <fieldset class="order-modal__sizes">
-          <legend class="sizes__title">Choose a size</legend>
+          <legend class="order-modal__sizes-title">Choose a size</legend>
 
-          <label class="sizes__card">
+          <label class="order-modal__size-option">
             <input
               type="radio"
               name="coffee-size"
               value="small"
+              class="order-modal__size-input"
               data-price-modifier="0"
               checked
             />
-            Small
+            <span class="order-modal__size-name">Small</span>
+            <span class="order-modal__size-price" aria-hidden="true"
+              >&nbsp;</span
+            >
           </label>
 
-          <label class="sizes__card">
+          <label class="order-modal__size-option">
             <input
+              class="order-modal__size-input"
               type="radio"
               name="coffee-size"
               value="medium"
               data-price-modifier="1"
             />
-            Medium
-            <span class="sizes__card__price">(+$1.00)</span>
+            <span class="order-modal__size-name">Medium</span>
+            <span class="order-modal__size-price">(+$1.00)</span>
           </label>
 
-          <label class="sizes__card">
+          <label class="order-modal__size-option">
             <input
+              class="order-modal__size-input"
               type="radio"
               name="coffee-size"
               value="large"
               data-price-modifier="2"
             />
-            Large <span class="sizes__card__price">(+$1.00)</span>
+            <span class="order-modal__size-name">Large</span>
+            <span class="order-modal__size-price">(+$2.00)</span>
           </label>
         </fieldset>
 
         <div class="order-modal__quantity">
-          <label for="order-quantity"> Quantity </label>
+          <label for="order-quantity" class="order-modal__quantity-title">
+            Quantity
+          </label>
 
           <div class="order-modal__quantity-controls">
             <button
@@ -753,21 +762,23 @@
           <p id="quantity-hint">Maximum 10 drinks per order.</p>
         </div>
 
-        <p class="order-modal__price">
-          Price:
-          <strong id="order-modal-price"></strong>
-        </p>
+        <div class="order-modal__summary">
+          <p class="order-modal__price">
+            Price:
+            <span id="order-modal-price"></span>
+          </p>
 
-        <p>
-          Total:
-          <output
-            id="order-modal-total"
-            for="order-quantity"
-            aria-live="polite"
-          >
-            $8.50
-          </output>
-        </p>
+          <p class="order-modal__total">
+            Total:
+            <output
+              id="order-modal-total"
+              for="order-quantity"
+              aria-live="polite"
+            >
+              $8.50
+            </output>
+          </p>
+        </div>
 
         <button type="submit" class="button button--primary">
           Add to order
