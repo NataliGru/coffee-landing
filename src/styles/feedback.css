@@ -41,22 +41,19 @@
   background-color: var(--color-primary);
   border-radius: 16px;
   z-index: 1;
-  transition: transform 300ms ease-in-out;
+  transition: scale 300ms ease-in-out;
+}
+
+.feedback__slider__button:hover {
+  scale: 1.1;
 }
 
 .feedback__slider__button--right {
   transform: translateX(-50%);
 }
-.feedback__slider__button--right:hover {
-  transform: translateX(-50%) scale(1.1);
-}
 
 .feedback__slider__button--left {
   transform: translateX(50%);
-}
-
-.feedback__slider__button--left:hover {
-  transform: translateX(50%) scale(1.1);
 }
 
 .feedback__card {

@@ -10,6 +10,7 @@
 @import "./coffee-promo.css";
 @import "./feedback.css";
 @import "./footer.css";
+@import "./order-modal.css";
 
 body {
   font-family: var(--font-primary);
@@ -53,11 +54,11 @@ main {
   padding-block: 12px;
   background-color: var(--color-primary);
   color: var(--color-text-dark);
-  transition: transform 300ms ease-in-out;
+  transition: scale 300ms ease-in-out;
 }
 
 .button--primary:hover {
-  transform: scale(1.2);
+  scale: 1.2;
 }
 
 .container {

@@ -80,7 +80,7 @@
       <nav class="nav container reveal" aria-label="Main navigation">
         <a class="nav__logo" href="/"> Beans </a>
 
-        <ul class="nav__list">
+        <ul class="nav__list" id="nav-menu">
           <li class="nav__item">
             <a class="nav__link" href="#menu"> Menu </a>
           </li>
@@ -93,6 +93,38 @@
             <a class="nav__link" href="#contact"> Contact Us </a>
           </li>
         </ul>
+
+        <div class="nav__actions">
+          <button
+            type="button"
+            class="button nav__cart"
+            data-cart-open
+            aria-label="Open cart, 0 items"
+          >
+            <img
+              src="./src/assets/images/cart.svg"
+              width="32"
+              height="32"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <p data-cart-count aria-hidden="true">10</p>
+          </button>
+
+          <button
+            type="button"
+            class="nav__toggle"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -112,7 +144,9 @@
               our customers.
             </p>
 
-            <button class="button button--primary reveal">Order Now</button>
+            <a class="button button--primary reveal" href="#menu">
+              Explore Menu
+            </a>
           </div>
         </div>
       </section>
@@ -131,11 +165,12 @@
                 coffee more than others you have ever tasted.
               </p>
 
-              <button
+              <a
                 class="coffee-intro__button button button--primary reveal"
+                href="#about"
               >
                 Learn More
-              </button>
+              </a>
             </div>
 
             <img
@@ -166,6 +201,7 @@
           <h2 class="section-title reveal">
             Enjoy a new blend of coffee style
           </h2>
+
           <p class="section-description reveal">
             Explore all flavours of coffee with us. There is always a new cup
             worth experiencing
@@ -190,9 +226,14 @@
                   Espresso 33% | Milk 33% | Foam 33%
                 </p>
 
-                <p class="menu-card__price">$8.50</p>
+                <p class="menu-card__price">From $8.50</p>
 
-                <button class="menu-card__button button button--primary">
+                <button
+                  class="menu-card__button button button--primary"
+                  data-order-button
+                  data-product="Cappuccino"
+                  data-price="8.50"
+                >
                   Order Now
                 </button>
               </div>
@@ -214,9 +255,14 @@
 
                 <p class="menu-card__description">Spiced Tea 50% | Milk 50%</p>
 
-                <p class="menu-card__price">$8.50</p>
+                <p class="menu-card__price">From $8.50</p>
 
-                <button class="menu-card__button button button--primary">
+                <button
+                  class="menu-card__button button button--primary"
+                  data-order-button
+                  data-product="Chai Latte"
+                  data-price="8.50"
+                >
                   Order Now
                 </button>
               </div>
@@ -240,9 +286,14 @@
                   Espresso 90% | Milk Foam 10%
                 </p>
 
-                <p class="menu-card__price">$8.50</p>
+                <p class="menu-card__price">From $8.50</p>
 
-                <button class="menu-card__button button button--primary">
+                <button
+                  class="menu-card__button button button--primary"
+                  data-order-button
+                  data-product="Macchiato"
+                  data-price="8.50"
+                >
                   Order Now
                 </button>
               </div>
@@ -264,9 +315,14 @@
 
                 <p class="menu-card__description">Espresso 100%</p>
 
-                <p class="menu-card__price">$8.50</p>
+                <p class="menu-card__price">From $8.50</p>
 
-                <button class="menu-card__button button button--primary">
+                <button
+                  class="menu-card__button button button--primary"
+                  data-order-button
+                  data-product="Espresso"
+                  data-price="8.50"
+                >
                   Order Now
                 </button>
               </div>
@@ -371,7 +427,7 @@
 
         <h2 class="join-us__title">Get started today.</h2>
 
-        <button class="button button--primary">Join Us</button>
+        <a class="button button--primary" href="#contact"> Join Us </a>
       </div>
 
       <section class="coffee-promo reveal">
@@ -386,9 +442,9 @@
               life with coffee.
             </p>
 
-            <button class="button button--primary coffee-promo__button">
+            <a class="button button--primary coffee-promo__button" href="#menu">
               Order Now
-            </button>
+            </a>
           </div>
 
           <div class="coffee-promo__image-container">
@@ -600,6 +656,132 @@
         </div>
       </div>
     </footer>
+
+    <dialog
+      class="order-modal"
+      id="order-modal"
+      aria-labelledby="order-modal-title"
+      aria-describedby="order-modal-description"
+    >
+      <form class="order-modal__form">
+        <button
+          type="button"
+          class="order-modal__close"
+          aria-label="Close order dialog"
+        >
+          <img
+            aria-hidden="true"
+            src="./src/assets/images/close.svg"
+            width="16"
+            height="16"
+          />
+        </button>
+
+        <h2 id="order-modal-title"></h2>
+
+        <p id="order-modal-description">
+          Choose a size and quantity for your drink.
+        </p>
+
+        <fieldset class="order-modal__sizes">
+          <legend class="sizes__title">Choose a size</legend>
+
+          <label class="sizes__card">
+            <input
+              type="radio"
+              name="coffee-size"
+              value="small"
+              data-price-modifier="0"
+              checked
+            />
+            Small
+          </label>
+
+          <label class="sizes__card">
+            <input
+              type="radio"
+              name="coffee-size"
+              value="medium"
+              data-price-modifier="1"
+            />
+            Medium
+            <span class="sizes__card__price">(+$1.00)</span>
+          </label>
+
+          <label class="sizes__card">
+            <input
+              type="radio"
+              name="coffee-size"
+              value="large"
+              data-price-modifier="2"
+            />
+            Large <span class="sizes__card__price">(+$1.00)</span>
+          </label>
+        </fieldset>
+
+        <div class="order-modal__quantity">
+          <label for="order-quantity"> Quantity </label>
+
+          <div class="order-modal__quantity-controls">
+            <button
+              type="button"
+              data-quantity-decrease
+              aria-label="Decrease quantity"
+            >
+              <span aria-hidden="true">-</span>
+            </button>
+
+            <input
+              type="number"
+              id="order-quantity"
+              name="quantity"
+              min="1"
+              max="10"
+              value="1"
+              inputmode="numeric"
+              aria-describedby="quantity-hint"
+            />
+
+            <button
+              type="button"
+              data-quantity-increase
+              aria-label="Increase quantity"
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <p id="quantity-hint">Maximum 10 drinks per order.</p>
+        </div>
+
+        <p class="order-modal__price">
+          Price:
+          <strong id="order-modal-price"></strong>
+        </p>
+
+        <p>
+          Total:
+          <output
+            id="order-modal-total"
+            for="order-quantity"
+            aria-live="polite"
+          >
+            $8.50
+          </output>
+        </p>
+
+        <button type="submit" class="button button--primary">
+          Add to order
+        </button>
+      </form>
+    </dialog>
+
+    <p
+      class="order-toast"
+      id="order-toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
