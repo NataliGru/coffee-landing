@@ -35,6 +35,10 @@
   font-weight: 700;
 }
 
+.menu-card__price {
+  min-height: 1.2em;
+}
+
 .menu-card__button {
   transform: translateY(50%);
 }

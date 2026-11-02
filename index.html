@@ -98,7 +98,7 @@
           <button
             type="button"
             class="button nav__cart"
-            data-cart-open
+            data-modal-open="cart-modal"
             aria-label="Open cart, 0 items"
           >
             <img
@@ -109,7 +109,7 @@
               loading="lazy"
               decoding="async"
             />
-            <p data-cart-count aria-hidden="true">10</p>
+            <span data-cart-count aria-hidden="true">0</span>
           </button>
 
           <button
@@ -226,13 +226,12 @@
                   Espresso 33% | Milk 33% | Foam 33%
                 </p>
 
-                <p class="menu-card__price">From $8.50</p>
+                <p class="menu-card__price" data-product-price="cappuccino"></p>
 
                 <button
                   class="menu-card__button button button--primary"
                   data-order-button
-                  data-product="Cappuccino"
-                  data-price="8.50"
+                  data-product-id="cappuccino"
                 >
                   Order Now
                 </button>
@@ -255,13 +254,12 @@
 
                 <p class="menu-card__description">Spiced Tea 50% | Milk 50%</p>
 
-                <p class="menu-card__price">From $8.50</p>
+                <p class="menu-card__price" data-product-price="chai-latte"></p>
 
                 <button
                   class="menu-card__button button button--primary"
                   data-order-button
-                  data-product="Chai Latte"
-                  data-price="8.50"
+                  data-product-id="chai-latte"
                 >
                   Order Now
                 </button>
@@ -286,13 +284,12 @@
                   Espresso 90% | Milk Foam 10%
                 </p>
 
-                <p class="menu-card__price">From $8.50</p>
+                <p class="menu-card__price" data-product-price="macchiato"></p>
 
                 <button
                   class="menu-card__button button button--primary"
                   data-order-button
-                  data-product="Macchiato"
-                  data-price="8.50"
+                  data-product-id="macchiato"
                 >
                   Order Now
                 </button>
@@ -315,13 +312,12 @@
 
                 <p class="menu-card__description">Espresso 100%</p>
 
-                <p class="menu-card__price">From $8.50</p>
+                <p class="menu-card__price" data-product-price="espresso"></p>
 
                 <button
                   class="menu-card__button button button--primary"
                   data-order-button
-                  data-product="Espresso"
-                  data-price="8.50"
+                  data-product-id="espresso"
                 >
                   Order Now
                 </button>
@@ -556,7 +552,7 @@
 
             <p
               class="visually-hidden"
-              id="feedback"
+              id="feedback-status"
               aria-live="polite"
               aria-atomic="true"
             ></p>
@@ -596,7 +592,13 @@
 
           <ul class="footer__socials">
             <li class="footer__social-item">
-              <a class="footer__social-link" href="#" aria-label="Facebook">
+              <a
+                class="footer__social-link"
+                href="https://portfolio-nataliia-hrushanyk.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Nataliia's portfolio"
+              >
                 <img
                   class="footer__social-icon"
                   src="./src/assets/footer/socials/f.png"
@@ -610,7 +612,13 @@
             </li>
 
             <li class="footer__social-item">
-              <a class="footer__social-link" href="#" aria-label="Instagram">
+              <a
+                class="footer__social-link"
+                href="https://portfolio-nataliia-hrushanyk.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Nataliia's portfolio"
+              >
                 <img
                   class="footer__social-icon"
                   src="./src/assets/footer/socials/i.png"
@@ -624,7 +632,13 @@
             </li>
 
             <li class="footer__social-item">
-              <a class="footer__social-link" href="#" aria-label="Youtube">
+              <a
+                class="footer__social-link"
+                href="https://portfolio-nataliia-hrushanyk.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Nataliia's portfolio"
+              >
                 <img
                   class="footer__social-icon"
                   src="./src/assets/footer/socials/y.png"
@@ -638,7 +652,13 @@
             </li>
 
             <li class="footer__social-item">
-              <a class="footer__social-link" href="#" aria-label="Twitter">
+              <a
+                class="footer__social-link"
+                href="https://portfolio-nataliia-hrushanyk.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Nataliia's portfolio"
+              >
                 <img
                   class="footer__social-icon"
                   src="./src/assets/footer/socials/t.png"
@@ -657,6 +677,7 @@
       </div>
     </footer>
 
+    <!-- Order -->
     <dialog
       class="order-modal"
       id="order-modal"
@@ -666,7 +687,8 @@
       <form class="order-modal__form">
         <button
           type="button"
-          class="order-modal__close"
+          class="close"
+          data-modal-close
           aria-label="Close order dialog"
         >
           <img
@@ -677,9 +699,9 @@
           />
         </button>
 
-        <h2 id="order-modal-title"></h2>
+        <h2 id="order-modal-title" class="title"></h2>
 
-        <p id="order-modal-description">
+        <p id="order-modal-description" class="description">
           Choose a size and quantity for your drink.
         </p>
 
@@ -780,19 +802,122 @@
           </p>
         </div>
 
-        <button type="submit" class="button button--primary">
+        <p
+          class="order-modal__limit-message"
+          data-order-limit-message
+          role="status"
+          aria-live="polite"
+          hidden
+        ></p>
+
+        <button
+          type="submit"
+          class="button button--primary order-modal__submit"
+          data-add-to-cart
+        >
           Add to order
         </button>
       </form>
     </dialog>
 
-    <p
+    <!-- Cart -->
+    <dialog
+      class="cart-modal"
+      id="cart-modal"
+      aria-labelledby="cart-modal-title"
+      aria-describedby="cart-modal-description"
+    >
+      <form class="cart-modal__form">
+        <button
+          type="button"
+          class="close"
+          data-modal-close
+          aria-label="Close cart dialog"
+        >
+          <img
+            aria-hidden="true"
+            src="./src/assets/images/close.svg"
+            width="16"
+            height="16"
+          />
+        </button>
+
+        <h2 id="cart-modal-title" class="title">Your cart</h2>
+
+        <p id="cart-modal-description" class="description">
+          Review your items before confirming the order.
+        </p>
+
+        <ul class="cart-modal__items" data-cart-items></ul>
+
+        <p class="cart-modal__empty" data-cart-empty>Your cart is empty.</p>
+
+        <a
+          class="button button--primary cart-modal__explore"
+          href="#menu"
+          data-cart-explore
+          data-modal-close
+        >
+          Explore menu
+        </a>
+
+        <div class="cart-modal__summary" data-cart-summary>
+          <span>Total:</span>
+          <output data-cart-total>$0.00</output>
+        </div>
+
+        <button
+          type="submit"
+          class="button button--primary cart-modal__submit"
+          data-cart-submit
+        >
+          Confirm order
+        </button>
+      </form>
+    </dialog>
+
+    <!-- Toast -->
+    <div
       class="order-toast"
       id="order-toast"
       role="status"
       aria-live="polite"
       aria-atomic="true"
-    ></p>
+    >
+      <div class="order-toast__icon" aria-hidden="true">✓</div>
+
+      <div class="order-toast__content">
+        <strong class="order-toast__title" data-toast-title>
+          Added to cart
+        </strong>
+
+        <p class="order-toast__message" data-toast-message></p>
+
+        <button
+          class="order-toast__action"
+          type="button"
+          data-toast-action
+          hidden
+        >
+          Open cart
+        </button>
+      </div>
+
+      <button
+        class="order-toast__close"
+        type="button"
+        data-toast-close
+        aria-label="Close notification"
+      >
+        ×
+      </button>
+
+      <div
+        class="order-toast__progress"
+        data-toast-progress
+        aria-hidden="true"
+      ></div>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

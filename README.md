@@ -1,7 +1,7 @@
 # Bean Scene Coffee Landing Page
 
-A responsive and accessible landing page for a fictional coffee shop, created
-as a front-end portfolio project.
+A responsive and accessible coffee shop landing page with an interactive
+ordering flow, cart management, and UI feedback.
 
 ![Coffee Landing Page preview](./public/hero-bg.webp)
 
@@ -11,39 +11,69 @@ as a front-end portfolio project.
 
 ## About the project
 
-This project is a landing page for a fictional coffee shop called **Bean Scene**.
-It includes a responsive navigation bar, a hero section, an introduction to the
-coffee shop, a product menu, a benefits section, promotional calls to action,
-an interactive customer feedback carousel, and an order customization dialog.
+**Bean Scene** is a fictional coffee shop landing page focused on responsive
+design, accessibility, and a complete client-side ordering experience.
 
-The project is a work in progress and is being developed as a front-end practice and portfolio project.
+Visitors can explore the menu, customize a drink by size and quantity, add it to
+the cart, edit or remove cart items, and confirm the order. Product prices come
+from a centralized TypeScript catalog, while the main menu content remains in
+the HTML for SEO.
 
 ## Features
 
-- Responsive layout for desktop and mobile devices
-- Hero section with a full-width background image
-- Coffee introduction section with product imagery and a decorative coffee splash
-- Responsive coffee menu with product cards, ingredients, starting prices, and order buttons
-- Accessible order dialog with custom drink-size options and synchronized quantity controls
-- Dynamic unit-price and order-total calculation based on the selected size and quantity
-- Benefits section with responsive feature cards
-- Promotional coffee section with a background overlay and product imagery
-- Accessible customer feedback carousel with labelled controls and slide status announcements
-- CSS Grid layouts that adapt cards to different screen sizes
-- Clear call-to-action buttons for ordering and learning more
-- Responsive navigation with a collapsible mobile menu and keyboard dismissal
-- Cart button with an item-count indicator
-- Scroll-triggered reveal animations powered by the Intersection Observer API
-- Reduced-motion support for CSS and JavaScript animations
-- Visible keyboard focus styles for links and buttons
-- Hover effects and smooth transitions
-- SEO and social sharing metadata for Open Graph and Twitter/X cards
-- Optimized WebP images with explicit dimensions to reduce layout shifts
-- Image preloading, lazy loading, and asynchronous decoding
-- Smooth anchor navigation between page sections
-- Reusable components and BEM-style CSS class naming
-- Reusable CSS variables for colors and typography
-- Custom Google Fonts
+### Ordering and cart
+
+- Product customization dialog with size and quantity controls
+- Dynamic unit-price and order-total calculation
+- Centralized product catalog and base prices
+- Cart with automatic merging of identical drinks and sizes
+- Quantity controls and item removal inside the cart
+- Maximum of 10 drinks per product and size combination
+- Dynamic cart counter and total-price calculation
+- Empty-cart state with a link back to the menu
+- Order confirmation flow that clears the cart
+- Accessible toast notifications with actions and progress indicators
+
+### Interface and accessibility
+
+- Responsive desktop and mobile layouts
+- Native, keyboard-accessible `<dialog>` elements
+- Keyboard dismissal for dialogs and mobile navigation
+- Accessible labels, live regions, and status announcements
+- Visible keyboard focus states and reduced-motion support
+- Scroll-triggered animations and a responsive feedback carousel
+
+### Performance and SEO
+
+- Semantic HTML content available without JavaScript
+- SEO and social-sharing metadata
+- Centralized dynamic prices without duplicated business data
+- Optimized WebP images with explicit dimensions
+- Lazy loading and asynchronous image decoding
+- Reserved layout space for dynamic prices to avoid layout shifts
+
+## Architecture
+
+The TypeScript code is organized by responsibility:
+
+```text
+src/scripts/
+├── cart-store.ts        # Cart state and business rules
+├── cart-view.ts         # Cart rendering and UI updates
+├── cart.ts              # Cart events and checkout flow
+├── products.ts          # Product catalog and menu prices
+├── order-calculations.ts # Order pricing and quantity rules
+├── order-modal-view.ts  # Order dialog rendering
+├── order-modal.ts       # Drink customization flow
+├── modal-controls.ts    # Reusable dialog controls
+├── toast.ts             # Toast notifications
+├── slider.ts            # Feedback carousel
+├── reveal.ts            # Scroll reveal animations
+└── open-mobile-menu.ts  # Responsive navigation
+```
+
+The cart store is independent of the DOM. Rendering and interaction are kept in
+separate modules, making the cart logic easier to maintain and test.
 
 ## Built with
 
@@ -51,6 +81,8 @@ The project is a work in progress and is being developed as a front-end practice
 - CSS3
 - TypeScript
 - Vite
+- ESLint
+- Prettier
 
 ## Getting started
 
@@ -68,11 +100,10 @@ Then open the local URL shown in the terminal.
 ## Available scripts
 
 ```bash
-npm run dev      # Start the development server
-npm run build    # Create a production build
-npm run preview  # Preview the production build
+npm run dev           # Start the development server
+npm run build         # Type-check and create a production build
+npm run preview       # Preview the production build
+npm run lint          # Run ESLint
+npm run format        # Format the project with Prettier
+npm run format:check  # Check formatting without changing files
 ```
-
-## Project status
-
-Work in progress. This project is part of my front-end development practice and portfolio.

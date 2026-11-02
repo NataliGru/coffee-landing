@@ -11,6 +11,8 @@
 @import "./feedback.css";
 @import "./footer.css";
 @import "./order-modal.css";
+@import "./cart-modal.css";
+@import "./toast.css";
 
 body {
   font-family: var(--font-primary);
@@ -119,4 +121,54 @@ main {
     font-size: 16px;
     line-height: 28px;
   }
+}
+
+dialog {
+  border-radius: 24px;
+  padding: 20px;
+  border: none;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+dialog::backdrop {
+  background-color: rgb(30 20 12 / 55%);
+  backdrop-filter: blur(4px);
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+dialog .close {
+  align-self: flex-end;
+  border-radius: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  transition: scale 300ms ease-in-out;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(8px, -8px);
+}
+
+dialog .close:hover {
+  scale: 1.2;
+}
+
+dialog .title {
+  color: var(--color-coffee);
+  font-size: 32px;
+  font-weight: 700;
+}
+dialog .description {
+  font-size: 16px;
+  line-height: 34px;
+  color: var(--color-text);
 }

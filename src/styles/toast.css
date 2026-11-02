@@ -1,0 +1,138 @@
+.order-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+
+  width: min(400px, calc(100% - 48px));
+  padding: 16px 16px 20px;
+
+  color: var(--color-white);
+  background: linear-gradient(135deg, #3e250d, var(--color-coffee));
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 28%);
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.96);
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms;
+}
+
+.order-toast--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.order-toast__icon {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: #1e5c35;
+  background-color: #dff7e7;
+  border-radius: 50%;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.order-toast__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.order-toast__title {
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.order-toast__message {
+  color: rgb(255 255 255 / 75%);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.order-toast__action {
+  width: fit-content;
+  margin-top: 4px;
+  padding: 0;
+  color: var(--color-primary);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.order-toast__action:hover {
+  color: var(--color-white);
+}
+
+.order-toast__action[hidden] {
+  display: none;
+}
+
+.order-toast__close {
+  align-self: start;
+
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  color: rgb(255 255 255 / 75%);
+  background: transparent;
+
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.order-toast__close:hover {
+  color: var(--color-white);
+  background-color: rgb(255 255 255 / 12%);
+}
+
+.order-toast__progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 4px;
+  background-color: var(--color-primary);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-toast {
+    transition: none;
+  }
+}

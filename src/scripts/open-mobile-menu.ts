@@ -7,7 +7,7 @@ export const initOpenMobileMenu = () => {
   const toggleMenu = (isOpen: boolean) => {
     toggleMenuButton?.setAttribute("aria-expanded", String(isOpen));
     toggleMenuButton?.setAttribute(
-      "arial-label",
+      "aria-label",
       isOpen ? "Close navigation menu" : "Open navigation menu",
     );
 

@@ -25,7 +25,7 @@ export const initFeedbackSlider = () => {
       slide.classList.toggle("is-active", isActive);
       slide.setAttribute("aria-hidden", String(!isActive));
 
-      if (isActive && !reducedMotionQuery) {
+      if (isActive && !reducedMotionQuery.matches) {
         slide.animate(
           [
             { opacity: 0, transform: "translateX(12px)" },
